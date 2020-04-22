@@ -51,6 +51,7 @@ def parse(dict_of_product):
         while html.find(title) == -1:
             proxies = {'https': all_proxies[random.randint(0, len(all_proxies) - 1)]}
             try:
+                start = datetime.datetime.now()
                 html = requests.get(url, headers=headers, proxies=proxies).text
             except requests.exceptions.ProxyError:
                 print('Ошибка из-за неверного прокси, продолжаю работу')
@@ -58,6 +59,7 @@ def parse(dict_of_product):
             else:
                 print('Времени прошло - ', datetime.datetime.now() - start)
                 get_info(title, url, html)
+                return
                 break
             i += 1
     print('Закончил работу за - ', datetime.datetime.now() - st)
@@ -70,10 +72,11 @@ def get_info(title, url, html):
     """
     print('Достаю инфу с спарсенного сайта.')
     try:
-        dict_of_info = {'Картинка': (lambda x: x[x.rfind('https'):-2]) (re.search(r'<meta property=\"og:image\"[^>]*', html).group())}
+        with open('1.png', 'wb') as f:
+            f.write(requests.get((lambda x: x[x.rfind('https'):-2]) (re.search(r'<meta property=\"og:image\"[^>]*', html).group())).content)
     except:
         return
-    dict_of_info.update({'Ссылка': url})
+    dict_of_info = {'Название': title, 'Ссылка': url}
     key = tuple(map(lambda x: x[x.rfind('>') + 1:], re.findall(r'_2TxqAVjiup[^<]*', html)))
     value = tuple(map(lambda x: x[x.rfind('>') + 1:], re.findall(r'<dd[^<]*', html)))
     for i in range(len(key)):
@@ -87,27 +90,33 @@ def write_xlsx(dict_of_info):
     except:
         wb = openpyxl.Workbook()
         del wb['Sheet']
-    if 'Лист1' not in wb.sheetnames:
-        wb.create_sheet('Лист1')
-    ws = wb['Лист1']
-    row = ws.max_row + 1 if ws.max_row == 1 else ws.max_row + 14
+    finally:
+        if 'Лист1' not in wb.sheetnames:
+            wb.create_sheet('Лист1')
+        ws = wb['Лист1']
+        for column in range(78):
+            if column >= 52:
+                ws.column_dimensions['b' + chr(ord("a") + column - 52)].width = 30
+            elif column >= 26:
+                ws.column_dimensions['a' + chr(ord("a") + column - 26)].width = 30
+            else:
+                ws.column_dimensions[chr(ord("a") + column)].width = 30
+
     print('Открыл 2.xlsx.')
-    for column, name_of_char in enumerate(dict_of_info.keys()):
-        if column == 0:
-            with open('1.png', 'wb') as f:
-                f.write(requests.get(dict_of_info.get(name_of_char)).content)
-            img = Image.open('1.png')
-            img.thumbnail((200, 200), Image.ANTIALIAS)
-            img.save('1.png')
-            img = openpyxl.drawing.image.Image('1.png')
-            ws.add_image(img, 'A' + str(row))
-        else:
-            ws.cell(row=row, column=column + 1).value = name_of_char
-        ws.column_dimensions[chr(ord("a") + column)].width = 50
-    row = ws.max_row + 1
-    del dict_of_info['Картинка']
-    for column, name_of_char in enumerate(dict_of_info.values()):
-        ws.cell(row=row, column=column + 2).value = name_of_char
+
+    row = ws.max_row + 1 if ws.max_row == 1 else ws.max_row + 14
+
+    with Image.open('1.png') as img:
+        img.thumbnail((200, 200), Image.ANTIALIAS)
+        img.save('1.png')
+
+    img = openpyxl.drawing.image.Image('1.png')
+    ws.add_image(img, 'A' + str(row))
+
+    for column, info in enumerate(dict_of_info.items()):
+        ws.cell(row=row, column=column + 2).value = info[0]
+        ws.cell(row=row + 1, column=column + 2).value = info[1]
+
     while True:
         try:
             wb.save('2.xlsx')
@@ -123,3 +132,4 @@ def write_xlsx(dict_of_info):
 if __name__ == '__main__':
     # get_info('sex', 'asd', 'lol')
     read_xlsx()
+    # write_xlsx("sex")
