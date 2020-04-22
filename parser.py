@@ -3,6 +3,8 @@ import requests
 import openpyxl
 import parser_proxy
 import re
+from PIL import Image
+from io import BytesIO
 
 
 def read_xlsx():
@@ -39,6 +41,7 @@ def parse(dict_of_product):
         html = ''
         title = title.strip()
         i = 0
+        url = url[:url.find('?')] + '/spec'
         while html.find(title) == -1:
             proxies = {'https': all_proxies[random.randint(0, len(all_proxies) - 1)]}
             try:
@@ -46,11 +49,6 @@ def parse(dict_of_product):
             except requests.exceptions.ProxyError:
                 continue
             i += 1
-        else:
-            url = url[:url.find('?')] + '/' + re.search(r'spec\?track[^\"]*', html).group()
-            html = requests.get(url,headers=headers, proxies=proxies).text
-            # в функцию для гета всего
-
 
 
 def get_info():
@@ -61,13 +59,42 @@ def get_info():
     product = ''
     with open('2.txt', 'r', encoding='utf-8') as f:
         product = f.read()
-    # print(product)
-    dict_of_info = {}
+    dict_of_info = {'Картинка': (lambda x: x[x.rfind('https'):-2]) (re.search(r'<meta property=\"og:image\"[^>]*', product).group())}
     key = tuple(map(lambda x: x[x.rfind('>') + 1:], re.findall(r'_2TxqAVjiup[^<]*', product)))
     value = tuple(map(lambda x: x[x.rfind('>') + 1:], re.findall(r'<dd[^<]*', product)))
-    print(key)
+    for i in range(len(key)):
+        dict_of_info.update({key[i]: value[i]})
+    write_xlsx(dict_of_info)
 
-    print()
+
+def write_xlsx(dict_of_info):
+    try:
+        wb = openpyxl.load_workbook('2.xlsx')
+    except:
+        wb = openpyxl.Workbook()
+        del wb['Sheet']
+    if 'Лист1' not in wb.sheetnames:
+        wb.create_sheet('Лист1')
+    ws = wb['Лист1']
+    row = ws.max_row + 1 if ws.max_row == 1 else ws.max_row + 14
+    for column, name_of_char in enumerate(dict_of_info.keys()):
+        if column == 0:
+            with open('1.png', 'wb') as f:
+                f.write(requests.get(dict_of_info.get(name_of_char)).content)
+            img = Image.open('1.png')
+            img.thumbnail((200, 200), Image.ANTIALIAS)
+            img.save('1.png')
+            img = openpyxl.drawing.image.Image('1.png')
+            ws.add_image(img, 'A' + str(row))
+            wb.save('2.xlsx')
+        else:
+            ws.cell(row=row, column=column + 1).value = name_of_char
+        ws.column_dimensions[chr(ord("a") + column)].width = 50
+    row = ws.max_row + 1
+    del dict_of_info['Картинка']
+    for column, name_of_char in enumerate(dict_of_info.values()):
+        ws.cell(row=row, column=column + 2).value = name_of_char
+    wb.save('2.xlsx')
 
 
 if __name__ == '__main__':
