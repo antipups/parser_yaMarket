@@ -1,0 +1,182 @@
+C:\Users\kurku\PycharmProjects\parser_yaMarket\new_venv\Scripts\python.exe C:/Users/kurku/PycharmProjects/parser_yaMarket/parser.py
+Процесс - 1/30 Смартфон Apple iPhone 11 64GB https://market.yandex.ru/product--smartfon-apple-iphone-11-64gb/558171067/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:22.500876
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 2/30 Смартфон Apple iPhone 11 Pro 256GB https://market.yandex.ru/product--smartfon-apple-iphone-11-pro-256gb/558163129/spec
+Времени прошло -  0:00:03.625690
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 3/30 Смартфон Apple iPhone 11 Pro 64GB https://market.yandex.ru/product--smartfon-apple-iphone-11-pro-64gb/558163101/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:01:11.133130
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 4/30 Смартфон Apple iPhone 11 Pro Max 256GB https://market.yandex.ru/product--smartfon-apple-iphone-11-pro-max-256gb/558168099/spec
+Времени прошло -  0:00:04.872373
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 5/30 Смартфон Apple iPhone 11 Pro Max 64GB https://market.yandex.ru/product--smartfon-apple-iphone-11-pro-max-64gb/558163103/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:07.207820
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 6/30 Смартфон Apple iPhone 7 32GB https://market.yandex.ru/product--smartfon-apple-iphone-7-32gb/14206636/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:26.075527
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 7/30 Смартфон Apple iPhone 7 Plus 32GB https://market.yandex.ru/product--smartfon-apple-iphone-7-plus-32gb/14206637/spec
+Времени прошло -  0:00:01.578470
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 8/30 Смартфон Apple iPhone 8 64GB https://market.yandex.ru/product--smartfon-apple-iphone-8-64gb/1732171388/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:07.129118
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 9/30 Смартфон Apple iPhone XR (1 SIM) 64GB https://market.yandex.ru/product--smartfon-apple-iphone-xr-64gb/175941311/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:01:22.453038
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 10/30 Смартфон Apple iPhone XS 64GB https://market.yandex.ru/product--smartfon-apple-iphone-xs-64gb/175944272/spec
+Времени прошло -  0:00:01.691081
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 11/30 Смартфон Apple iPhone XS Max (1 SIM) 64GB https://market.yandex.ru/product--smartfon-apple-iphone-xs-max-64gb/175939244/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:29.915323
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 12/30 Смартфон Apple iPhone XS Max (2 SIM) 64GB https://market.yandex.ru/product--smartfon-apple-iphone-xs-max-64gb/175939244/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:43.334701
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 13/30 Смартфон Huawei P Smart (2019) 32GB https://market.yandex.ru/product--smartfon-huawei-p-smart-2019-3-32gb/299703905/spec
+Времени прошло -  0:00:20.604045
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 14/30 Смартфон Huawei P Smart Z 64GB https://market.yandex.ru/product--smartfon-huawei-p-smart-z-4-64gb/470161106/spec
+Времени прошло -  0:00:03.963795
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 15/30 Смартфон Huawei P30 Lite 128 GB https://market.yandex.ru/product--smartfon-huawei-p30-lite/419237008/spec
+Времени прошло -  0:00:06.367565
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 16/30 Смартфон Huawei P30 Lite 6/256GB https://market.yandex.ru/product--smartfon-huawei-p30-lite-new-edition/651246079/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:05.354389
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 17/30 Смартфон Huawei Y5 2019 2/32GB https://market.yandex.ru/product--smartfon-huawei-y5-2019-32gb/447725261/spec
+Времени прошло -  0:00:19.488903
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 18/30 Смартфон Huawei Y5 Lite 16GB https://market.yandex.ru/product--smartfon-huawei-y5-lite/217969159/spec
+Времени прошло -  0:00:03.286980
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 19/30 Смартфон Huawei Y6 (2019) 32GB https://market.yandex.ru/product--smartfon-huawei-y6-2019/402895984/spec
+Времени прошло -  0:00:01.820002
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 20/30 Смартфон Huawei Y6 S 64GB https://market.yandex.ru/product--smartfon-huawei-y6s-3-64gb/651623113/spec
+Времени прошло -  0:00:05.064983
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 21/30 Смартфон Huawei Y7 (2019) 32GB https://market.yandex.ru/product--smartfon-huawei-y7-2019/385691263/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:02:14.530548
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 22/30 Смартфон Huawei Y9 Prime 2019 https://market.yandex.ru/product--smartfon-huawei-y9-prime-2019-4-128gb/549546876/spec
+Времени прошло -  0:00:01.380383
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 23/30 Смартфон Nokia 1 Plus 8GB https://market.yandex.ru/product--smartfon-nokia-1-plus-8gb/396508048/spec
+Времени прошло -  0:00:49.778450
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закройте пожалуйста Excel файл 2.xlsx
+Закройте пожалуйста Excel файл 2.xlsx
+Закрыл 2.xlsx.
+Процесс - 24/30 Смартфон Oppo A1K 32GB https://market.yandex.ru/product--smartfon-oppo-a1k/439495683/spec
+Времени прошло -  0:00:03.513830
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 25/30 Смартфон Oppo A5 2020 3/64GB https://market.yandex.ru/product--smartfon-oppo-a5-2020-3-64gb/573473024/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:24.834313
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 26/30 Смартфон Oppo A5S 3/32 GB https://market.yandex.ru/product--smartfon-oppo-a5s/439496638/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:27.584971
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 27/30 Смартфон Oppo A9 2020 4/128GB https://market.yandex.ru/product--smartfon-oppo-a9-2020-4-128gb/573324046/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:14.915867
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 28/30 Смартфон Oppo Reno 256GB https://market.yandex.ru/product--smartfon-oppo-reno/453406059/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:32.966463
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 29/30 Смартфон Oppo Reno2 Z 8/128GB https://market.yandex.ru/product--smartfon-oppo-reno-2z-8-128gb/544612018/spec
+Времени прошло -  0:03:51.816702
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Процесс - 30/30 Смартфон Samsung Galaxy A01 SM-A015 16 GB https://market.yandex.ru/product--smartfon-samsung-galaxy-a01/652049364/spec
+Ошибка из-за неверного прокси, продолжаю работу;
+Времени прошло -  0:00:42.828622
+Достаю инфу с спарсенного сайта.
+Открыл 2.xlsx.
+Закрыл 2.xlsx.
+Закончил работу за -  0:15:54.196141
+
+Process finished with exit code 0
