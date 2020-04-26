@@ -71,7 +71,7 @@ def parse(dict_of_product):
             print(proxies)
             try:
                 html = requests.get(url, headers=headers, proxies=proxies).text
-            except requests.exceptions.ProxyError:
+            except (requests.exceptions.ProxyError, requests.exceptions.SSLError):
                 print('Ошибка из-за неверного прокси, продолжаю работу;')
                 time.sleep(3)
                 continue
@@ -83,12 +83,21 @@ def parse(dict_of_product):
     print('Закончил работу за - ', datetime.datetime.now() - st)
 
 
+def parse_all_pic(html):
+    pic_code = re.search(r'{\"property\":\"og:image\",\"content\":\".*twitter:image', html).group()
+    for pic in re.finditer(r'https((?!hq).)*hq', pic_code):
+        pic = pic.group()
+        print(pic)
+
+
 def get_info(title, url, html):
     """
         Получаем всю инфу о продукте.
     :return:
     """
     print('Достаю инфу с спарсенного сайта.')
+    with open('Дамп.txt', 'w', encoding='utf-8') as f:
+        f.write(html)
     try:
         with open('1.png', 'wb') as f:
             f.write(requests.get((lambda x: x[x.rfind('https'):-2]) (re.search(r'<meta property=\"og:image\"[^>]*', html).group())).content)
@@ -159,6 +168,8 @@ if __name__ == '__main__':
     # get_info('sex', 'asd', 'lol')
     # write_xlsx("sex")
     # read_xlsx('../1.xlsx')
-    get_info('1', '1', '1')
+    # get_info('1', '1', '1')
     # write_xlsx(1)
+    with open('Дамп.txt', 'r', encoding='utf-8') as f:
+        parse_all_pic(f.read())
     input('Парсер завершил свою работу, для выхода нажмите какую-либо кнопку.')

@@ -11,9 +11,10 @@ def parse_proxy():
 
     html = requests.get('https://free-proxy-list.net/').text
     urls = list()
-    for proxy in re.finditer(r'(\d{0,3}.){4}</td><td>\d{1,6}', re.search(r'<tbody>.*</tbody>', html).group()):
+    for proxy in re.finditer(r'\d{1,3}\.((?!ago).)*', re.search(r'<tbody>.*</tbody>', html).group()):
         proxy = proxy.group()
-        urls.append(proxy[:proxy.find('<')] + ':' + proxy[proxy.rfind('>') + 1:])
+        if re.search(r'hx.{4}', proxy).group().endswith('ye'):
+            urls.append((lambda x: x[:x.find('<')] + ':' + x[x.rfind('>') + 1:]) (re.search(r'(\d{1,3}.){4}/td><td>\d{1,6}', proxy).group()))
     return tuple(urls)
 
 
