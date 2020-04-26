@@ -62,7 +62,7 @@ def parse(dict_of_product):
             all_proxies = parser_proxy.parse_proxy()
         else:
             i += 1
-        html, title, url = '', product[0].strip(), product[1][:product[1].find('?')] + '/spec'
+        html, title, url = '', product[0].strip(), product[1][:product[1].find('?')] + ('/spec' if product[1].find('spec') == -1 else '')
         print(f"Процесс - {index + 1}/{len(dict_of_product.keys())}", title, url)
         start = datetime.datetime.now()
         while html.find(title) == -1:
@@ -86,8 +86,14 @@ def parse(dict_of_product):
 
 
 def parse_all_pic(html):
-    pic_code = re.search(r'{\"property\":\"og:image\",\"content\":\".*twitter:image', html).group()
-    print(pic_code)
+    pic_code = re.search(r'{\"property\":\"og:image\",\"content\":\".*twitter:image', html)
+    if not pic_code:
+        return False
+
+    if not os.path.exists('image'):
+        os.mkdir('image')
+
+    pic_code = pic_code.group()
     all_pic = []
     all_name_of_pic = []
     for index, pic in enumerate(re.finditer(r'https((?!hq).)*hq', pic_code), start=1):
@@ -97,7 +103,6 @@ def parse_all_pic(html):
             filename = 'image\\' + str(index) + '.png'
             all_name_of_pic.append(filename)
             with open(filename, 'wb') as f:
-                print('Зашел')
                 f.write(requests.get(pic).content)
     return tuple(all_name_of_pic)
 
@@ -111,6 +116,9 @@ def get_info(title, url, html):
     # with open('Дамп.txt', 'w', encoding='utf-8') as f:
     #     f.write(html)
     tuple_of_pic = parse_all_pic(html)
+    if not tuple_of_pic:
+        print(tuple_of_pic)
+        return False
 
     dict_of_info = {'Название': title, 'Ссылка': url}
     for match in re.finditer(r"_2TxqAVjiup((?!</dd).)*", html, re.MULTILINE):
@@ -172,7 +180,7 @@ def write_xlsx(dict_of_info, tuple_of_pic):
             print('Закрыл 2.xlsx.')
             for pic in tuple_of_pic:
                 os.remove(pic)
-        return
+            return
 
 
 if __name__ == '__main__':
