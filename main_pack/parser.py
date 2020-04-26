@@ -62,7 +62,7 @@ def parse(dict_of_product):
             all_proxies = parser_proxy.parse_proxy()
         else:
             i += 1
-        html, title, url = '', product[0].strip(), product[1][:product[1].find('?')] + ('/spec' if product[1].find('spec') == -1 else '')
+        html, title, url = '', product[0].strip(), product[1][:product[1].find('?')] + ('/spec' if product[1].find('/spec') == -1 else '')
         print(f"Процесс - {index + 1}/{len(dict_of_product.keys())}", title, url)
         start = datetime.datetime.now()
         while html.find(title) == -1:
