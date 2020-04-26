@@ -69,12 +69,15 @@ def parse(dict_of_product):
             proxies = {'https': all_proxies[ri(0, len(all_proxies) - 1)]}
             print(proxies)
             try:
+                # html = requests.get(url, headers=headers, proxies=proxies).text
                 html = requests.get(url, headers=headers, proxies=proxies).text
             except (requests.exceptions.ProxyError, requests.exceptions.SSLError):
                 print('Ошибка из-за неверного прокси, продолжаю работу;')
                 time.sleep(3)
                 continue
             else:
+                with open('temp.txt', 'w', encoding='utf-8') as f:
+                    f.write(html)
                 print('Времени прошло - ', datetime.datetime.now() - start)
                 if get_info(title, url, html) is False:
                     continue
@@ -84,15 +87,19 @@ def parse(dict_of_product):
 
 def parse_all_pic(html):
     pic_code = re.search(r'{\"property\":\"og:image\",\"content\":\".*twitter:image', html).group()
+    print(pic_code)
     all_pic = []
+    all_name_of_pic = []
     for index, pic in enumerate(re.finditer(r'https((?!hq).)*hq', pic_code), start=1):
         pic = pic.group()
         if pic not in all_pic:
             all_pic.append(pic)
-            with open('image\\' + str(index) + '.' + pic[pic.rfind('.') + 1:pic.rfind('/')], 'wb') as f:
+            filename = 'image\\' + str(index) + '.png'
+            all_name_of_pic.append(filename)
+            with open(filename, 'wb') as f:
                 print('Зашел')
                 f.write(requests.get(pic).content)
-    return len(all_pic)
+    return tuple(all_name_of_pic)
 
 
 def get_info(title, url, html):
@@ -103,7 +110,7 @@ def get_info(title, url, html):
     print('Достаю инфу с спарсенного сайта.')
     # with open('Дамп.txt', 'w', encoding='utf-8') as f:
     #     f.write(html)
-    amount_of_pic = parse_all_pic(html)
+    tuple_of_pic = parse_all_pic(html)
 
     dict_of_info = {'Название': title, 'Ссылка': url}
     for match in re.finditer(r"_2TxqAVjiup((?!</dd).)*", html, re.MULTILINE):
@@ -112,10 +119,10 @@ def get_info(title, url, html):
         value = characteristic[characteristic.rfind('>') + 1:]
         dict_of_info.update({key: value})
 
-    write_xlsx(dict_of_info, amount_of_pic)
+    write_xlsx(dict_of_info, tuple_of_pic)
 
 
-def write_xlsx(dict_of_info, amount_of_pic):
+def write_xlsx(dict_of_info, tuple_of_pic):
     try:
         wb = openpyxl.load_workbook('2.xlsx')
     except:
@@ -141,33 +148,31 @@ def write_xlsx(dict_of_info, amount_of_pic):
     print('Открыл 2.xlsx.')
 
     row = ws.max_row + 1 if ws.max_row == 2 else ws.max_row + 14
-    print(row)
-    all_images = tuple(os.listdir('image'))
-    for i in range(1, amount_of_pic + 1):
-        filename = 'image\\' + tuple(x for x in all_images if x.startswith(str(i)))[0]
-        with Image.open(filename) as img:
+    for index, pic in enumerate(tuple_of_pic):
+        with Image.open(pic) as img:
             img.thumbnail((200, 200), Image.ANTIALIAS)
-            img.save(filename)
-
-        img = openpyxl.drawing.image.Image(filename)
-        ws.add_image(img, 'A' + str(row + 11 * (i - 1)))
-        print(row + 11 * (i - 1))
+            img.save(pic)
+        img = openpyxl.drawing.image.Image(pic)
+        ws.add_image(img, 'A' + str(row + 11 * index))
     else:
-        ws.cell(row=row + 1 + 11 * (i - 1), column=1).value = 'Максимальная строка'
+        ws.cell(row=row + 1 + 11 * index, column=1).value = 'Максимальная строка'
 
     for column, val in dict_of_info.items():
         ws.cell(row=row + 1, column=dict_of_col.get(column)).value = val
 
     while True:
         try:
-            wb.save('2.xlsx')
-        except:
+          wb.save('2.xlsx')
+        except Exception as e:
+            print('Ошибка - ', e)
             print('Закройте пожалуйста Excel файл 2.xlsx')
             time.sleep(3)
         else:
             wb.close()
             print('Закрыл 2.xlsx.')
-            return
+            for pic in tuple_of_pic:
+                os.remove(pic)
+        return
 
 
 if __name__ == '__main__':
