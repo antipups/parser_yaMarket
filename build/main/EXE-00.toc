@@ -51,7 +51,7 @@
  [],
  False,
  False,
- 1587930759,
+ 1587977529,
  [('run.exe',
    'c:\\users\\kurku\\pycharmprojects\\parser_yamarket\\new_venv\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])

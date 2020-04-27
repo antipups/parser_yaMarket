@@ -46,7 +46,7 @@ def parse(dict_of_product):
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': f'_ym_uid=1579538585539137365; mda=0; yandexuid=4775578911579527928; yuidss=4775578911579527928; i=7fpXxLZtVlknYALqfuHdIqESJ7QKPyrT/p1Ib1NKFr2+GlI6yQ4Nq8EuI7FxxNSTvC5JPW7DUgpjBnX2NCjgeBJhLQE=; my=YwA=; yandex_gid=142; gdpr=0; yandexmarket=48%2CUAH%2C1%2C%2C%2C%2C2%2C0%2C0%2C0%2C0%2C0%2C12%2C0; mOC=1; currentRegionId=142; currentRegionName=%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA; cycada=vBIVPiL1OivB3zUy7Bun86lEsDT+JL2RpLjQnNHDsg4=; yabs-frequency=/4/0000000000000000/AKgmSB0wGG00/; oMaSefD=1; oMaSpfD=1; oMaRefD=1; Session_id=3:1587567800.5.0.1587567800047:uOvH2Q:4c.1|230517873.0.2|4:156007.208530.Ct9WborQwK5ZqYGCgMhyMgHKkSI; sessionid2=3:1587567800.5.0.1587567800047:uOvH2Q:4c.1|230517873.0.2|4:156007.666179.wzxl5em2LjckToAqLylJxzwXt3M; L=WnRGfUNYc2xfWkAFakRaBg5bYgN0cAVxGAcNIUANFBMvBwIAJw==.1587567800.14211.321094.42a247e10a7e1c492bb9a0954f71a90a; yandex_login=nick.kurkurin; skid=7141896761587577073; _ym_d=1587577075; oMaSofD=1; oMaFifD=1; spravka=dD0xNTg3NjQzNDY5O2k9MjE3LjE5OS4yMzYuMTM1O3U9MTU4NzY0MzQ2OTI1OTAwNzM2MztoPTNkZTAxZGNhNGU2NGU2MzFjNDM5MDRkYWEwODZlNWJl; oMaPrfD=1; _ym_wasSynced=%7B%22time%22%3A1587836215690%2C%22params%22%3A%7B%22eu%22%3A0%7D%2C%22bkParams%22%3A%7B%7D%7D; yp=1581234933.com.3#1581437288.dq.1#1896019512.multib.1#1584131668.oyu.4775578911579527928#1596427321.szm.1_25%3A1536x864%3A1536x760#1902927800.udn.cDpuaWNrLmt1cmt1cmlu#1612368485.ygu.1#1894898590.yrtsi.1579538590#1587922617.yu.4775578911579527928; ymex=1590428217.oyu.4775578911579527928#1898004678.yrts.1582644678#1894898590.yrtsi.1579538590; ugcp=1; _ym_isad=2; visits=1586198458-1587836213-1587888784; lr=0; uid=AABcEl6lQpCfFQBoDnguAg==; js=1; dcm=1; first_visit_time={datetime.datetime.now().strftime("%Y-%m-%d")}T{datetime.datetime.now().strftime("%H")}%3A{datetime.datetime.now().strftime("%M")}%3A{datetime.datetime.now().strftime("%S")}%2B03%3A00; fonts-loaded=1; _ym_visorc_160656=b; _ym_visorc_45411513=b; parent_reqid_seq=5c7dc5735b0a63a73e9844e31340bc0a%2C415b0fdde5d27495e481fcb9601610c3%2Cb88a3787d965629d9f81553e0677c4ac%2Cf4f7c7b2b0eed317461e2101f8283306%2C4d60c77b8d6b7b3eb9fd2d3ff9553680; metrika_enabled=1; _ym_metrika_enabled=1; HISTORY_AUTH_SESSION=2e659fb9; _ym_metrika_enabled_160656=1; _ym_metrika_enabled_44910898=1; _ym_metrika_enabled_45411513=1',
+        'Cookie': '_ym_uid=1579538585539137365; mda=0; yandexuid=4775578911579527928; yuidss=4775578911579527928; i=7fpXxLZtVlknYALqfuHdIqESJ7QKPyrT/p1Ib1NKFr2+GlI6yQ4Nq8EuI7FxxNSTvC5JPW7DUgpjBnX2NCjgeBJhLQE=; my=YwA=; yandex_gid=142; gdpr=0; yandexmarket=48%2CUAH%2C1%2C%2C%2C%2C2%2C0%2C0%2C0%2C0%2C0%2C12%2C0; mOC=1; currentRegionId=142; currentRegionName=%D0%94%D0%BE%D0%BD%D0%B5%D1%86%D0%BA; cycada=vBIVPiL1OivB3zUy7Bun86lEsDT+JL2RpLjQnNHDsg4=; yabs-frequency=/4/0000000000000000/AKgmSB0wGG00/; oMaSefD=1; oMaSpfD=1; oMaRefD=1; Session_id=3:1587567800.5.0.1587567800047:uOvH2Q:4c.1|230517873.0.2|4:156007.208530.Ct9WborQwK5ZqYGCgMhyMgHKkSI; sessionid2=3:1587567800.5.0.1587567800047:uOvH2Q:4c.1|230517873.0.2|4:156007.666179.wzxl5em2LjckToAqLylJxzwXt3M; L=WnRGfUNYc2xfWkAFakRaBg5bYgN0cAVxGAcNIUANFBMvBwIAJw==.1587567800.14211.321094.42a247e10a7e1c492bb9a0954f71a90a; yandex_login=nick.kurkurin; skid=7141896761587577073; _ym_d=1587577075; oMaSofD=1; oMaFifD=1; spravka=dD0xNTg3NjQzNDY5O2k9MjE3LjE5OS4yMzYuMTM1O3U9MTU4NzY0MzQ2OTI1OTAwNzM2MztoPTNkZTAxZGNhNGU2NGU2MzFjNDM5MDRkYWEwODZlNWJl; oMaPrfD=1; _ym_isad=2; uid=AABcfl6l4rNcxwB8FlvSAg==; js=1; _ym_wasSynced=%7B%22time%22%3A1587929780582%2C%22params%22%3A%7B%22eu%22%3A0%7D%2C%22bkParams%22%3A%7B%7D%7D; yp=1581234933.com.3#1581437288.dq.1#1896019512.multib.1#1584131668.oyu.4775578911579527928#1596427321.szm.1_25%3A1536x864%3A1536x760#1902927800.udn.cDpuaWNrLmt1cmt1cmlu#1612368485.ygu.1#1894898590.yrtsi.1579538590#1588016182.yu.4775578911579527928; ymex=1590521782.oyu.4775578911579527928#1898004678.yrts.1582644678#1894898590.yrtsi.1579538590; first_visit_time=2020-04-26T22%3A36%3A25%2B03%3A00; fonts-loaded=1; visits=1586198458-1587888784-1587974766; lr=0; dcm=1; HISTORY_AUTH_SESSION=bb8d1fce; metrika_enabled=1; _ym_metrika_enabled=1; _ym_visorc_160656=b; ugcp=1; _ym_visorc_45411513=b; _ym_metrika_enabled_160656=1; _ym_metrika_enabled_44910898=1; _ym_metrika_enabled_45411513=1; parent_reqid_seq=1ab7b7d5dc7b3f90d261fa9c4ea890f5%2C64b51b361cb8f2d81d2f8a19ce18d007',
         'Host': 'market.yandex.ua',
         'Sec-Fetch-Dest': 'document',
         'Sec-Fetch-Mode': 'navigate',
@@ -69,8 +69,12 @@ def parse(dict_of_product):
             proxies = {'https': all_proxies[ri(0, len(all_proxies) - 1)]}
             print(proxies)
             try:
-                # html = requests.get(url, headers=headers, proxies=proxies).text
-                html = requests.get(url, headers=headers, proxies=proxies).text
+                html = requests.get(url, headers=headers, proxies=proxies)
+                if not html.ok:
+                    print(f'Мертвая ссылка - {url}, {title}')
+                    break
+                else:
+                    html = html.text
             except (requests.exceptions.ProxyError, requests.exceptions.SSLError):
                 print('Ошибка из-за неверного прокси, продолжаю работу;')
                 time.sleep(3)
@@ -117,7 +121,8 @@ def get_info(title, url, html):
     #     f.write(html)
     tuple_of_pic = parse_all_pic(html)
     if not tuple_of_pic:
-        print(tuple_of_pic)
+        if html.find('captcha') > -1:
+            print('Ошибка парсинга, пробую по новой.')
         return False
 
     dict_of_info = {'Название': title, 'Ссылка': url}
